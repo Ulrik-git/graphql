@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./styles.css">
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+    </head>
+    <body>
+        <div id="auditRatio">
+            <h2>Audits ratio :</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" style="height: 100%; width: 100%;">
+            <line id="lineDone" stroke="darkblue" stroke-width="6" x1="40" x2="40" y1="0" y2="200"></line>
+            <line id="lineReceived" stroke="black" stroke-width="6" x1="140" x2="140" y1="0" y2="200"></line>
+          </svg>
+          <p>Done</p>
+          <p>Received</p>
+          <p id="ratioDone"></p>
+          <p id="ratioReceived"></p>
+          <h3 id="ratioTotal"></h3>
+        </div>
+        <p id="username">Welcome Guest</p>
+        <p id="level">Level : </p>
+        <p id="xp">XP : </p>
+        <input type="text" id="login-input" placeholder="Enter login value">
+        <button onclick="searchLogin()">Search and show data</button>
+        <p id="result"></p>
+        <div id="graph-container"></div>
+    </body>
+    <script src="./scripts.js"></script>
+      
+</html>

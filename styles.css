@@ -1,0 +1,36 @@
+svg {
+    height: 100%;
+    width: 100%;
+}
+
+#auditRatio {
+    height: 300px;
+    width: 200px;
+    background-color: lightblue;
+    padding-bottom: 70px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#auditRatio p {
+    margin-top: -80px;
+    margin-right: 20px;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#auditRatio #ratioDone, #auditRatio #ratioReceived {
+    margin-top: -60px;
+    margin-right: 24px;
+    margin-left: 0px;
+}
+
+#ratioTotal {
+    margin-top: -30px;
+    margin-left: 40px;
+}
