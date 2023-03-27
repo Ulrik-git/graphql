@@ -238,8 +238,9 @@ function fetchUsers(offset = 0) {
         console.log(allUsers)
         fetchUsers(offset + 20);
     } else {
-      console.log("All users fetched:", allUsers[0]);
-      alert('All fetched')
+      //console.log("All users fetched:", allUsers[0]);
+      document.getElementById('bodyMain').style.display = 'block';
+      document.getElementById('loader').style.display = 'none';
     }
   })
   .catch((error) => {
