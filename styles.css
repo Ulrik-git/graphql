@@ -9,6 +9,7 @@ svg {
     background-color: lightblue;
     padding-bottom: 70px;
     display: flex;
+    flex-flow: row wrap;
     margin: auto;
 }
 
