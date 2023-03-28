@@ -182,7 +182,7 @@ graphContainer.appendChild(svg);
     } else {
         document.getElementById('lineReceived').setAttribute('y1', ((totalXpUp * 100) / totalXpDown * 2) - 200);
     }
-    document.getElementById('xp').textContent = "XP : " + formattedNumberXp(totalXp);
+    document.getElementById('xp').textContent = "XP : " + formattedNumber(totalXp);
     document.getElementById('level').textContent = "Level : " + maxAmount;
     }
 })
@@ -192,16 +192,15 @@ graphContainer.appendChild(svg);
 }
 
 const formattedNumber = (num) => {
-    if (num < 1000000) {
-        return formattedNumberXp(num);
-    }
-    const suffixes = ["B", "kB", "MB", "BB", "TB"]; // suffixes for thousands, millions, billions, trillions, etc.
-    const digits = Math.floor(Math.log10(num)); // number of digits in the number
-    const suffixIndex = Math.floor(digits / 3); // determine the suffix index based on the number of digits
-    const suffix = suffixes[suffixIndex]; // get the appropriate suffix from the suffixes array
-    const roundedNum = (num / Math.pow(1000, suffixIndex)).toFixed(2); // divide the number by the appropriate power of 1000 and round to 2 decimal places
-    return `${roundedNum}${suffix}`; // return the formatted number with suffix
-  };
+  if (num < 1000000) {
+    return formattedNumberXp(num);
+  }
+  const suffixes = ["B", "kB", "MB", "GB", "TB"]; // suffixes for thousands, millions, billions, trillions, etc.
+  const suffixIndex = Math.floor(Math.log(num) / Math.log(1000)); // determine the suffix index based on the value of the number
+  const suffix = suffixes[suffixIndex]; // get the appropriate suffix from the suffixes array
+  const roundedNum = (num / Math.pow(1000, suffixIndex)).toFixed(2); // divide the number by the appropriate power of 1000 and round to 2 decimal places
+  return `${roundedNum}${suffix}`; // return the formatted number with suffix
+};
   
   const formattedNumberXp = (num) => {
     const suffixes = ["B", "kB", "MB", "BB", "TB"]; // suffixes for thousands, millions, billions, trillions, etc.
